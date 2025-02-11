@@ -4,6 +4,9 @@ import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
+  baseOptions: {
+    timeout: 60000, // Set timeout to 60 seconds (60000 milliseconds)
+  },
 });
 const openai = new OpenAIApi(configuration);
 
